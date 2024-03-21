@@ -26,15 +26,25 @@ public class PrimeiraClassJava {
 			Disciplina disciplina = new Disciplina();
 			disciplina.setDisciplina(nomeDisciplina);
 			disciplina.setNota(Double.valueOf(notaDisciplina));
-			
+
 			aluno1.getDisciplinas().add(disciplina);
 
 		}
-		
+
 		int escolha = JOptionPane.showConfirmDialog(null, "Quer remover alguma disciplina?");
 		if (escolha == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina, 1, 2, 3 ou 4?");
-			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue()- 1);
+
+			int continuarRemover = 0;
+			int posicao = 1;
+
+			while (continuarRemover == 0) {
+				String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina, 1, 2, 3 ou 4?");
+				aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
+				posicao ++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a Remover?");
+
+			}
+
 		}
 
 		System.out.println(aluno1.toString());
