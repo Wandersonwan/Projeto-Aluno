@@ -1,5 +1,8 @@
 package cursojava.executavel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import cursojava.Class.Aluno;
@@ -8,8 +11,14 @@ import cursojava.Class.Disciplina;
 public class PrimeiraClassJava {
 
 	public static void main(String[] args) {
+		
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		for(int qtd = 1; qtd <= 2; qtd ++) {
+			
+		
 
-		String nome = JOptionPane.showInputDialog("Qual o seu Nome");
+		String nome = JOptionPane.showInputDialog("Qual o Nome do Aluno " + qtd +" ");
 		String idade = JOptionPane.showInputDialog("Qual o sua Idade");
 		String dataNascimento = JOptionPane.showInputDialog("Qual sua data de Nascimento");
 
@@ -45,11 +54,23 @@ public class PrimeiraClassJava {
 
 			}
 
+		  }
+		alunos.add(aluno1);
+		
 		}
-
-		System.out.println(aluno1.toString());
-		System.out.println("Media do Aluno: " + aluno1.getMediaNota());
-		System.out.println("Resultado " + (aluno1.getAlunoAprovado()));
+		
+		for (Aluno aluno : alunos) {
+			
+			if(aluno.getNome().equalsIgnoreCase("Wanderson")) {
+			System.out.println(aluno.toString());
+			System.out.println("Media do Aluno: " + aluno.getMediaNota());
+			System.out.println("Resultado " + (aluno.getAlunoAprovado()));
+			System.out.println("========================================================================");
+			
+			}
+			
+		}
+		
 
 	}
 
